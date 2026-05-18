@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MoveEase Packers & Movers — Safe, reliable, and affordable home relocation, office shifting, and vehicle transport services across 100+ cities." />
+  <title>MoveEase Packers & Movers | Safe & Reliable Moving Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --plum: #381932;
+      --plum-dark: #260f22;
+      --plum-mid: #4a2242;
+      --plum-light: #5c2e54;
+      --cream: #FFF3E6;
+      --cream-dark: #f5e4ce;
+      --cream-deeper: #ebd3b5;
+      --text-main: #1e0e1a;
+      --text-body: #4a3040;
+      --text-muted: #7a5e6e;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 12px rgba(56,25,50,0.08);
+      --shadow-md: 0 8px 32px rgba(56,25,50,0.13);
+      --shadow-lg: 0 20px 60px rgba(56,25,50,0.18);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4,h5 { font-family: 'Sora', sans-serif; }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--plum);
+      padding: 0 6%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+      box-shadow: 0 4px 30px rgba(56,25,50,0.3);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .logo-text { color: var(--cream); font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 700; line-height: 1.1; }
+    .logo-text span { display: block; font-size: 0.65rem; font-weight: 400; color: var(--cream-deeper); letter-spacing: 1px; text-transform: uppercase; }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,243,230,0.75); text-decoration: none;
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-cta {
+      background: var(--cream); color: var(--plum) !important;
+      padding: 9px 20px; border-radius: 8px;
+      font-weight: 700 !important; font-size: 0.85rem !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover { background: var(--cream-dark) !important; transform: translateY(-1px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: var(--plum-dark); padding: 1.5rem 6%;
+      flex-direction: column; gap: 1rem; z-index: 999;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--cream); text-decoration: none; font-size: 1rem;
+      font-weight: 500; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,243,230,0.1);
+    }
+    .mobile-menu .nav-cta { border: none; width: fit-content; margin-top: 0.5rem; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: calc(100vh - 72px);
+      background: linear-gradient(145deg, var(--plum-dark) 0%, var(--plum) 45%, #5c2440 100%);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding: 5rem 6%;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(255,200,120,0.08) 0%, transparent 65%),
+                  radial-gradient(ellipse at 10% 80%, rgba(255,243,230,0.04) 0%, transparent 50%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: center; width: 100%; max-width: 1280px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,243,230,0.12); color: var(--cream);
+      border: 1px solid rgba(255,243,230,0.2);
+      padding: 7px 16px; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+    .hero-badge::before { content: '✦'; color: #f5c97a; }
+    h1.hero-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      line-height: 1.12; color: var(--cream);
+      font-weight: 800; letter-spacing: -1px;
+      margin-bottom: 1.2rem;
+    }
+    h1.hero-title em { font-style: normal; color: #f5c97a; }
+    .hero-sub {
+      color: rgba(255,243,230,0.7); font-size: 1.05rem; line-height: 1.7;
+      max-width: 480px; margin-bottom: 2.2rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--cream); color: var(--plum);
+      padding: 13px 28px; border-radius: 10px;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.92rem;
+      border: none; cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.25s; box-shadow: 0 4px 20px rgba(255,243,230,0.2);
+    }
+    .btn-primary:hover { background: var(--cream-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,243,230,0.25); }
+    .btn-outline {
+      background: transparent; color: var(--cream);
+      padding: 13px 28px; border-radius: 10px;
+      font-family: 'Sora', sans-serif; font-weight: 600; font-size: 0.92rem;
+      border: 1.5px solid rgba(255,243,230,0.35); cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { background: rgba(255,243,230,0.1); border-color: var(--cream); }
+
+    /* floating cards in hero */
+    .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+    .hero-illustration {
+      width: 100%; max-width: 500px;
+      background: rgba(255,243,230,0.06);
+      border: 1px solid rgba(255,243,230,0.1);
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      padding: 2.5rem;
+      position: relative;
+    }
+    .hero-svg { width: 100%; height: auto; }
+    .float-card {
+      position: absolute;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px; padding: 12px 16px;
+      box-shadow: 0 12px 40px rgba(56,25,50,0.2);
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.8rem; font-weight: 600; color: var(--plum);
+      animation: float 4s ease-in-out infinite;
+    }
+    .float-card:nth-child(2) { animation-delay: -1.5s; }
+    .float-card:nth-child(3) { animation-delay: -3s; }
+    .float-card-icon { font-size: 1.4rem; }
+    .float-card-label { color: var(--text-muted); font-weight: 400; font-size: 0.7rem; }
+    .fc1 { top: -18px; left: -18px; }
+    .fc2 { bottom: -18px; right: -18px; }
+    .fc3 { top: 50%; right: -24px; transform: translateY(-50%); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes float-mid {
+      0%, 100% { transform: translateY(-50%); }
+      50% { transform: translateY(calc(-50% - 8px)); }
+    }
+    .fc3 { animation: float-mid 4s ease-in-out infinite; animation-delay: -3s; }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 6rem 6%; }
+    .section-wrap { max-width: 1280px; margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--plum); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .section-label::before, .section-label::after {
+      content: ''; flex: none;
+      width: 20px; height: 1.5px; background: var(--plum); opacity: 0.4;
+    }
+    h2.section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+      font-weight: 800; color: var(--plum); line-height: 1.15;
+      letter-spacing: -0.5px; margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 540px; margin-bottom: 3rem; }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin-left: auto; margin-right: auto; }
+    .text-center .section-label { justify-content: center; }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--cream); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid rgba(56,25,50,0.07);
+      border-radius: var(--radius); padding: 2rem 1.8rem;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--plum), var(--plum-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .service-card:hover::after { transform: scaleX(1); }
+    .svc-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 1.2rem;
+      transition: background 0.3s;
+    }
+    .service-card:hover .svc-icon { background: linear-gradient(135deg, var(--plum), var(--plum-light)); }
+    .service-card:hover .svc-icon span { filter: brightness(0) invert(1); }
+    .svc-title { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--plum); margin-bottom: 0.5rem; }
+    .svc-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.65; }
+
+    /* ─── WHY CHOOSE US ─── */
+    #why { background: var(--plum); }
+    #why .section-label { color: var(--cream-deeper); }
+    #why .section-label::before, #why .section-label::after { background: var(--cream-deeper); }
+    #why h2.section-title { color: var(--cream); }
+    #why .section-sub { color: rgba(255,243,230,0.6); }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .feature-card {
+      background: rgba(255,243,230,0.07);
+      border: 1px solid rgba(255,243,230,0.1);
+      border-radius: var(--radius); padding: 1.8rem 1.6rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+    }
+    .feature-card:hover {
+      background: rgba(255,243,230,0.13);
+      border-color: rgba(255,243,230,0.25);
+      transform: translateY(-4px);
+    }
+    .feat-icon {
+      width: 50px; height: 50px;
+      background: rgba(255,243,230,0.12); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .feat-title { font-family: 'Sora', sans-serif; color: var(--cream); font-size: 0.98rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feat-desc { color: rgba(255,243,230,0.55); font-size: 0.83rem; line-height: 1.6; }
+
+    /* ─── STATS ─── */
+    #stats {
+      background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
+      padding: 5rem 6%;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem; max-width: 1000px; margin: 0 auto;
+    }
+    .stat-card { text-align: center; padding: 2rem 1rem; }
+    .stat-num {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800; color: var(--plum);
+      line-height: 1; margin-bottom: 0.4rem;
+    }
+    .stat-label { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background: var(--cream); }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .testi-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 2rem; box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(56,25,50,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .testi-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .testi-stars { color: #f5a623; font-size: 1rem; letter-spacing: 2px; }
+    .testi-text { color: var(--text-body); font-size: 0.92rem; line-height: 1.7; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--plum) 0%, var(--plum-light) 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--cream); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem;
+    }
+    .author-name { font-weight: 700; color: var(--plum); font-size: 0.92rem; }
+    .author-loc { font-size: 0.78rem; color: var(--text-muted); }
+    .testi-quote { font-size: 2.5rem; color: var(--plum); opacity: 0.15; line-height: 1; margin-bottom: -0.5rem; font-family: Georgia, serif; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--plum-dark); }
+    #contact .section-label { color: var(--cream-deeper); }
+    #contact .section-label::before, #contact .section-label::after { background: var(--cream-deeper); }
+    #contact h2.section-title { color: var(--cream); }
+    #contact .section-sub { color: rgba(255,243,230,0.55); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; }
+    .ci-icon {
+      width: 44px; height: 44px; flex: none;
+      background: rgba(255,243,230,0.1); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .ci-label { font-size: 0.75rem; color: rgba(255,243,230,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+    .ci-val { color: var(--cream); font-weight: 500; font-size: 0.92rem; }
+
+    .contact-form {
+      background: rgba(255,243,230,0.06);
+      border: 1px solid rgba(255,243,230,0.1);
+      border-radius: var(--radius); padding: 2.5rem;
+      backdrop-filter: blur(12px);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.78rem; color: rgba(255,243,230,0.6); font-weight: 500; letter-spacing: 0.3px; }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(255,243,230,0.08);
+      border: 1.5px solid rgba(255,243,230,0.15);
+      border-radius: 10px; padding: 12px 16px;
+      color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      outline: none; transition: all 0.25s; width: 100%;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,243,230,0.3); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: rgba(255,243,230,0.5);
+      background: rgba(255,243,230,0.12);
+    }
+    .form-group select option { background: var(--plum-dark); color: var(--cream); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; padding: 14px;
+      background: var(--cream); color: var(--plum);
+      border: none; border-radius: 10px; cursor: pointer;
+      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem;
+      transition: all 0.25s; margin-top: 0.5rem;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .form-submit:hover { background: var(--cream-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,243,230,0.15); }
+    .form-msg { display: none; padding: 12px; border-radius: 8px; font-size: 0.85rem; text-align: center; margin-top: 1rem; }
+    .form-msg.success { background: rgba(100,200,100,0.15); color: #80e080; border: 1px solid rgba(100,200,100,0.2); display: block; }
+    .form-msg.error { background: rgba(255,80,80,0.15); color: #ff9090; border: 1px solid rgba(255,80,80,0.2); display: block; }
+    .field-error { font-size: 0.72rem; color: #ff9090; margin-top: 2px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1a0a16; padding: 4rem 6% 2rem;
+      color: rgba(255,243,230,0.5);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem; max-width: 1280px; margin: 0 auto;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,243,230,0.07);
+    }
+    .footer-brand .logo-text { font-size: 1rem; }
+    .footer-tagline { color: rgba(255,243,230,0.4); font-size: 0.85rem; line-height: 1.65; margin-top: 1rem; max-width: 240px; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 1.5rem; }
+    .social-btn {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,243,230,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; text-decoration: none; color: var(--cream);
+      transition: background 0.2s;
+    }
+    .social-btn:hover { background: rgba(255,243,230,0.18); }
+    .footer-col h4 { font-family: 'Sora', sans-serif; color: var(--cream); font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul li a { color: rgba(255,243,230,0.45); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--cream); }
+    .footer-bottom {
+      max-width: 1280px; margin: 2rem auto 0;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* ─── FLOATING BUTTONS ─── */
+    .fab-group { position: fixed; bottom: 2rem; right: 1.5rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.75rem; z-index: 900; }
+    .fab-wa {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #25D366; color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .fab-wa:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.55); }
+    .fab-top {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--plum); color: var(--cream); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+      box-shadow: var(--shadow-md); transition: all 0.2s;
+      opacity: 0; pointer-events: none;
+    }
+    .fab-top.visible { opacity: 1; pointer-events: auto; }
+    .fab-top:hover { transform: translateY(-3px); background: var(--plum-mid); }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-sub { margin: 0 auto 2.2rem; }
+      .hero-btns { justify-content: center; }
+      .hero-visual { margin-top: 3rem; }
+      .fc3 { display: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      nav { padding: 0 5%; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 4rem 5%; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .float-card { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav role="banner">
+  <a href="#home" class="logo" aria-label="MoveEase Home">
+    <div class="logo-icon">🚚</div>
+    <div class="logo-text">MoveEase<span>Packers &amp; Movers</span></div>
+  </a>
+  <ul class="nav-links" role="navigation" aria-label="Main navigation">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Choose Us</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Get Free Quote</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#why" onclick="closeMobile()">Why Choose Us</a>
+  <a href="#testimonials" onclick="closeMobile()">Testimonials</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobile()">Get Free Quote</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="home" class="hero" aria-label="Hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">Trusted by 5000+ Families Across India</div>
+      <h1 class="hero-title">Safe &amp; Reliable<br><em>Packers &amp; Movers</em><br>Services</h1>
+      <p class="hero-sub">Your belongings deserve the best care. We make every move smooth, stress-free, and on time — from doorstep to destination.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">📦 Book Your Move</a>
+        <a href="tel:+919876543210" class="btn-outline">📞 Call Now</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-illustration">
+        <svg class="hero-svg" viewBox="0 0 440 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Moving truck illustration" role="img">
+          <!-- Road -->
+          <rect x="20" y="250" width="400" height="50" rx="8" fill="rgba(255,243,230,0.08)"/>
+          <rect x="100" y="271" width="40" height="8" rx="4" fill="rgba(255,243,230,0.2)"/>
+          <rect x="200" y="271" width="40" height="8" rx="4" fill="rgba(255,243,230,0.2)"/>
+          <rect x="300" y="271" width="40" height="8" rx="4" fill="rgba(255,243,230,0.2)"/>
+          <!-- Truck body -->
+          <rect x="60" y="160" width="200" height="90" rx="6" fill="rgba(255,243,230,0.18)"/>
+          <rect x="260" y="185" width="90" height="65" rx="6" fill="rgba(255,243,230,0.12)"/>
+          <!-- Truck cab window -->
+          <rect x="268" y="193" width="74" height="38" rx="5" fill="rgba(255,243,230,0.25)"/>
+          <line x1="305" y1="193" x2="305" y2="231" stroke="rgba(56,25,50,0.3)" stroke-width="1.5"/>
+          <!-- Truck body details -->
+          <rect x="80" y="172" width="160" height="70" rx="4" fill="rgba(255,243,230,0.08)" stroke="rgba(255,243,230,0.2)" stroke-width="1"/>
+          <!-- MoveEase logo on truck -->
+          <text x="140" y="212" fill="rgba(255,243,230,0.5)" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">MoveEase</text>
+          <!-- Boxes on truck -->
+          <rect x="95" y="178" width="36" height="36" rx="3" fill="rgba(245,201,122,0.35)" stroke="rgba(245,201,122,0.5)" stroke-width="1"/>
+          <rect x="145" y="178" width="36" height="36" rx="3" fill="rgba(245,201,122,0.25)" stroke="rgba(245,201,122,0.4)" stroke-width="1"/>
+          <rect x="195" y="190" width="28" height="24" rx="3" fill="rgba(245,201,122,0.2)" stroke="rgba(245,201,122,0.35)" stroke-width="1"/>
+          <!-- Ribbon on boxes -->
+          <line x1="95" y1="196" x2="131" y2="196" stroke="rgba(245,201,122,0.6)" stroke-width="1"/>
+          <line x1="113" y1="178" x2="113" y2="214" stroke="rgba(245,201,122,0.6)" stroke-width="1"/>
+          <!-- Wheels -->
+          <circle cx="120" cy="258" r="22" fill="rgba(255,243,230,0.12)" stroke="rgba(255,243,230,0.3)" stroke-width="2"/>
+          <circle cx="120" cy="258" r="10" fill="rgba(255,243,230,0.2)"/>
+          <circle cx="280" cy="258" r="22" fill="rgba(255,243,230,0.12)" stroke="rgba(255,243,230,0.3)" stroke-width="2"/>
+          <circle cx="280" cy="258" r="10" fill="rgba(255,243,230,0.2)"/>
+          <circle cx="340" cy="258" r="18" fill="rgba(255,243,230,0.1)" stroke="rgba(255,243,230,0.25)" stroke-width="2"/>
+          <circle cx="340" cy="258" r="8" fill="rgba(255,243,230,0.15)"/>
+          <!-- Exhaust -->
+          <rect x="348" y="175" width="6" height="20" rx="3" fill="rgba(255,243,230,0.15)"/>
+          <ellipse cx="351" cy="172" rx="5" ry="3" fill="rgba(255,243,230,0.1)"/>
+          <!-- Stars decoration -->
+          <circle cx="380" cy="120" r="2" fill="rgba(245,201,122,0.6)"/>
+          <circle cx="50" cy="100" r="1.5" fill="rgba(245,201,122,0.4)"/>
+          <circle cx="400" cy="80" r="1" fill="rgba(255,243,230,0.5)"/>
+          <circle cx="30" cy="200" r="1.5" fill="rgba(255,243,230,0.4)"/>
+        </svg>
+        <!-- Floating cards -->
+        <div class="float-card fc1">
+          <span class="float-card-icon">✅</span>
+          <div>
+            <div>Insured Move</div>
+            <div class="float-card-label">100% coverage</div>
+          </div>
+        </div>
+        <div class="float-card fc2">
+          <span class="float-card-icon">⏱️</span>
+          <div>
+            <div>On-Time Delivery</div>
+            <div class="float-card-label">Guaranteed</div>
+          </div>
+        </div>
+        <div class="float-card fc3">
+          <span class="float-card-icon">🌟</span>
+          <div>
+            <div>4.9 Rating</div>
+            <div class="float-card-label">5000+ reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" aria-label="Our Services">
+  <div class="section-wrap">
+    <div class="text-center">
+      <div class="section-label reveal">What We Offer</div>
+      <h2 class="section-title reveal reveal-delay-1">Our Moving Services</h2>
+      <p class="section-sub reveal reveal-delay-2">From packing the first box to settling into your new home — we handle every detail with care.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="svc-icon"><span>🏠</span></div>
+        <h3 class="svc-title">Home Relocation</h3>
+        <p class="svc-desc">Complete household shifting with professional packing, careful loading, safe transport, and unpacking at your new home.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-1">
+        <div class="svc-icon"><span>🏢</span></div>
+        <h3 class="svc-title">Office Shifting</h3>
+        <p class="svc-desc">Minimal downtime office moves. We handle workstations, servers, furniture, and documents with full discretion.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-2">
+        <div class="svc-icon"><span>🚗</span></div>
+        <h3 class="svc-title">Vehicle Transportation</h3>
+        <p class="svc-desc">Car carrier and bike transport with secure loading, GPS tracking, and door-to-door delivery across all major cities.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-3">
+        <div class="svc-icon"><span>📦</span></div>
+        <h3 class="svc-title">Packing &amp; Unpacking</h3>
+        <p class="svc-desc">Premium materials and expert techniques to safeguard fragile, valuable, and bulky items from end to end.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-1">
+        <div class="svc-icon"><span>🗄️</span></div>
+        <h3 class="svc-title">Storage Services</h3>
+        <p class="svc-desc">Secure, climate-controlled warehouses for short or long-term storage with 24/7 surveillance and easy retrieval.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-2">
+        <div class="svc-icon"><span>🌍</span></div>
+        <h3 class="svc-title">International Relocation</h3>
+        <p class="svc-desc">Customs clearance, documentation, air and sea freight — your global move handled by certified professionals.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US ═══ -->
+<section id="why" aria-label="Why Choose Us">
+  <div class="section-wrap">
+    <div class="text-center">
+      <div class="section-label reveal">Our Strengths</div>
+      <h2 class="section-title reveal reveal-delay-1">Why Thousands Trust Us</h2>
+      <p class="section-sub reveal reveal-delay-2">We don't just move things — we move lives. Every commitment we make is backed by process, people, and passion.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feat-icon">💰</div>
+        <h3 class="feat-title">Affordable Pricing</h3>
+        <p class="feat-desc">Transparent quotes with zero hidden charges. You get premium service without premium pricing.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feat-icon">⏰</div>
+        <h3 class="feat-title">On-Time Delivery</h3>
+        <p class="feat-desc">We respect your time. Our fleet and planning ensure your belongings arrive exactly when promised.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feat-icon">🛡️</div>
+        <h3 class="feat-title">Secure Packaging</h3>
+        <p class="feat-desc">Multi-layer packing for fragile and valuable items. Every item is wrapped, cushioned, and labeled.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feat-icon">✅</div>
+        <h3 class="feat-title">Verified Professionals</h3>
+        <p class="feat-desc">Background-checked, trained staff who treat your home and belongings with respect and care.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feat-icon">🎧</div>
+        <h3 class="feat-title">24/7 Support</h3>
+        <p class="feat-desc">Round-the-clock assistance before, during, and after your move. We're always a call away.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feat-icon">📍</div>
+        <h3 class="feat-title">GPS Tracking</h3>
+        <p class="feat-desc">Real-time tracking of your consignment. Know exactly where your belongings are, always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section id="stats" aria-label="Statistics">
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <div class="stat-num" data-target="5000">0</div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-1">
+      <div class="stat-num" data-target="10">0</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-2">
+      <div class="stat-num" data-target="100">0</div>
+      <div class="stat-label">Cities Served</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-3">
+      <div class="stat-num" data-target="98">0</div>
+      <div class="stat-label">% On-Time Rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials" aria-label="Customer Testimonials">
+  <div class="section-wrap">
+    <div class="text-center">
+      <div class="section-label reveal">Real Stories</div>
+      <h2 class="section-title reveal reveal-delay-1">What Our Customers Say</h2>
+      <p class="section-sub reveal reveal-delay-2">Don't take our word for it — here's what families and businesses say about their MoveEase experience.</p>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Absolutely seamless experience! The team was punctual, careful with all our furniture, and the entire shift from Bangalore to Pune was stress-free. Highly recommend MoveEase.</p>
+        <div class="testi-author">
+          <div class="avatar">RK</div>
+          <div>
+            <div class="author-name">Rajan Kapoor</div>
+            <div class="author-loc">Bangalore → Pune</div>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal reveal-delay-1">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Office shifting is a nightmare — except with MoveEase. Our 40-person office was moved over one weekend with zero damage and zero downtime. Remarkable professionalism.</p>
+        <div class="testi-author">
+          <div class="avatar">SA</div>
+          <div>
+            <div class="author-name">Sneha Agarwal</div>
+            <div class="author-loc">Office Move, Hyderabad</div>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal reveal-delay-2">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★☆</div>
+        <p class="testi-text">Used their vehicle transport service to move my car from Delhi to Chennai. GPS tracking gave real-time updates the whole way. The car arrived in perfect condition.</p>
+        <div class="testi-author">
+          <div class="avatar">PM</div>
+          <div>
+            <div class="author-name">Priya Menon</div>
+            <div class="author-loc">Delhi → Chennai</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" aria-label="Contact Us">
+  <div class="section-wrap">
+    <div class="text-center">
+      <div class="section-label reveal">Get In Touch</div>
+      <h2 class="section-title reveal reveal-delay-1">Request a Free Quote</h2>
+      <p class="section-sub reveal reveal-delay-2">Tell us about your move and we'll get back with a tailored plan and transparent pricing within 2 hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-info-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <div class="ci-label">Call Us</div>
+            <div class="ci-val">+91 98765 43210</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <div class="ci-label">Email Us</div>
+            <div class="ci-val">hello@moveease.in</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Head Office</div>
+            <div class="ci-val">42, Brigade Road, Bangalore, Karnataka 560001</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <div class="ci-label">Working Hours</div>
+            <div class="ci-val">Mon–Sat: 8am – 8pm<br>Sun: 10am – 4pm</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal reveal-delay-1">
+        <form id="quoteForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="fname" placeholder="Your full name" autocomplete="name" />
+              <span class="field-error" id="fname-err"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" autocomplete="tel" />
+              <span class="field-error" id="phone-err"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required *</label>
+            <select id="service" name="service">
+              <option value="">Select a service…</option>
+              <option value="home">Home Relocation</option>
+              <option value="office">Office Shifting</option>
+              <option value="vehicle">Vehicle Transportation</option>
+              <option value="packing">Packing &amp; Unpacking</option>
+              <option value="storage">Storage Services</option>
+              <option value="international">International Relocation</option>
+            </select>
+            <span class="field-error" id="service-err"></span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="from">Moving From *</label>
+              <input type="text" id="from" name="from" placeholder="City / Area" />
+              <span class="field-error" id="from-err"></span>
+            </div>
+            <div class="form-group">
+              <label for="to">Moving To *</label>
+              <input type="text" id="to" name="to" placeholder="City / Area" />
+              <span class="field-error" id="to-err"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" placeholder="Any specific requirements, floor details, special items…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Get My Free Quote →</button>
+          <div class="form-msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="logo" aria-label="MoveEase Home">
+        <div class="logo-icon">🚚</div>
+        <div class="logo-text">MoveEase<span>Packers &amp; Movers</span></div>
+      </a>
+      <p class="footer-tagline">Trusted by thousands of families and businesses across India for safe, timely, and affordable relocation services.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+        <a href="#" class="social-btn" aria-label="Instagram">ig</a>
+        <a href="#" class="social-btn" aria-label="Twitter/X">𝕏</a>
+        <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Home Relocation</a></li>
+        <li><a href="#services">Office Shifting</a></li>
+        <li><a href="#services">Vehicle Transport</a></li>
+        <li><a href="#services">Packing &amp; Unpacking</a></li>
+        <li><a href="#services">Storage Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#home">About Us</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+        <li><a href="mailto:hello@moveease.in">hello@moveease.in</a></li>
+        <li><a href="#">Bangalore HQ</a></li>
+        <li><a href="#">Track Your Move</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 MoveEase Packers &amp; Movers. All rights reserved.</span>
+    <span>Made with ♥ in India</span>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING BUTTONS ═══ -->
+<div class="fab-group">
+  <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20your%20moving%20services." 
+     class="fab-wa" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+  <button class="fab-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+</div>
+
+<script>
+  // ── Hamburger menu
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  ham.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') ham.click(); });
+  function closeMobile() { ham.classList.remove('open'); mob.classList.remove('open'); }
+
+  // ── Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in-view'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => revealObserver.observe(r));
+
+  // ── Count-up animation
+  const counters = document.querySelectorAll('.stat-num[data-target]');
+  function animateCounter(el) {
+    const target = +el.dataset.target;
+    const suffix = target >= 100 ? '+' : (target === 98 ? '%' : '+');
+    const duration = 1800;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ── Back to top button
+  const btt = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    btt.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // ── Form validation
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fields = [
+      { id: 'fname', errId: 'fname-err', msg: 'Please enter your full name.', test: v => v.trim().length >= 2 },
+      { id: 'phone', errId: 'phone-err', msg: 'Please enter a valid 10-digit phone number.', test: v => /^[\d\s\+\-]{8,15}$/.test(v.trim()) },
+      { id: 'service', errId: 'service-err', msg: 'Please select a service.', test: v => v !== '' },
+      { id: 'from', errId: 'from-err', msg: 'Please enter your current city.', test: v => v.trim().length >= 2 },
+      { id: 'to', errId: 'to-err', msg: 'Please enter your destination city.', test: v => v.trim().length >= 2 },
+    ];
+    let valid = true;
+    fields.forEach(f => {
+      const el = document.getElementById(f.id);
+      const err = document.getElementById(f.errId);
+      if (!f.test(el.value)) {
+        err.textContent = f.msg;
+        el.style.borderColor = 'rgba(255,100,100,0.6)';
+        valid = false;
+      } else {
+        err.textContent = '';
+        el.style.borderColor = '';
+      }
+    });
+    const msg = document.getElementById('formMsg');
+    if (valid) {
+      msg.className = 'form-msg success';
+      msg.textContent = '✅ Thanks! We\'ll get back to you within 2 hours with a free quote.';
+      this.reset();
+      setTimeout(() => { msg.className = 'form-msg'; msg.textContent = ''; }, 6000);
+    } else {
+      msg.className = 'form-msg error';
+      msg.textContent = '⚠️ Please fix the errors above before submitting.';
+    }
+  });
+
+  // Live field validation clear
+  ['fname','phone','service','from','to'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input', () => {
+      document.getElementById(id + '-err').textContent = '';
+      el.style.borderColor = '';
+      const msg = document.getElementById('formMsg');
+      if (msg.classList.contains('error')) { msg.className = 'form-msg'; msg.textContent = ''; }
+    });
+  });
+</script>
+</body>
+</html>
